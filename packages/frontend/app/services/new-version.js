@@ -25,7 +25,7 @@ export default class NewVersionService extends Service {
     super(...arguments);
     // don't autostart this task in a test environment.
     if (!isTesting()) {
-      this.updateVersion.perform();
+      // this.updateVersion.perform();
     }
   }
 
@@ -43,7 +43,7 @@ export default class NewVersionService extends Service {
       // @todo figure out a way to test the recursion. For now, don't run it in test mode [ST 2024/04/09]
       if (!isTesting()) {
         await timeout(ONE_MINUTE);
-        this.updateVersion.perform();
+        // this.updateVersion.perform();
       }
     }
   });

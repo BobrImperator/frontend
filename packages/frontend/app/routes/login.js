@@ -24,7 +24,8 @@ export default class LoginRoute extends Route {
   }
 
   async attemptSSOAuth() {
-    const type = await this.iliosConfig.getAuthenticationType();
+    const type = 'form';
+    // const type = await this.iliosConfig.getAuthenticationType();
     if (type === 'form' || type === 'ldap') {
       return;
     }

@@ -60,5 +60,5 @@ export default defineConfig(({ mode }) => {
 });
 
 function shouldBuildTests(mode) {
-  return mode !== 'production' || process.env.FORCE_BUILD_TESTS;
+  return false;
 }

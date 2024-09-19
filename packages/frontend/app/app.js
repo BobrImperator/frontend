@@ -4,6 +4,12 @@ import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
 
+import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
+
+if (macroCondition(isDevelopingApp())) {
+  importSync('./deprecation-workflow');
+}
+
 let d = window.define;
 
 for (const [name, module] of Object.entries(compatModules)) {
