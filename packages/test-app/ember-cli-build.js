@@ -2,7 +2,6 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const broccoliAssetRevDefaults = require('broccoli-asset-rev/lib/default-options');
-const { Webpack } = require('@embroider/webpack');
 
 module.exports = async function (defaults) {
   const app = new EmberApp(defaults, {
@@ -33,10 +32,7 @@ module.exports = async function (defaults) {
   setConfig(app, __dirname, {
     ___legacy_support: true,
   });
-  return require('@embroider/compat').compatBuild(app, Webpack, {
-    staticAddonTestSupportTrees: true,
-    staticAddonTrees: true,
-    staticHelpers: true,
-    staticComponents: true,
-  });
+
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app);
 };
