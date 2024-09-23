@@ -45,7 +45,7 @@ export default class SchoolRoute extends Route {
       this.#preloadPromise = Promise.all([
         this.store.findAll('aamc-method'),
         this.store.findAll('assessment-option'),
-        this.store.findAll('aamc-pcr'),
+        this.store.findAll('aamc-pcrs'),
       ]);
     }
 
