@@ -77,6 +77,7 @@ module.exports = async function (defaults) {
     staticAddonTrees: true,
     staticHelpers: true,
     staticComponents: true,
+    availableContentForTypes: ['server-variables'],
     splitAtRoutes: [
       // /admin[a-z-]*/,
       'assign-students',
